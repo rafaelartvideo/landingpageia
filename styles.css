@@ -1,18 +1,22 @@
 :root {
-  --bg: #efe2d6;
-  --bg-soft: #f8f0e7;
-  --paper: #fff9f2;
-  --ink: #3b2823;
-  --muted: #725e53;
-  --sage: #98735d;
-  --sage-dark: #704a3b;
-  --sage-deep: #472e28;
-  --sage-soft: #e6d1be;
-  --sand: #d5c1b1;
-  --peach: #c19c85;
-  --line: rgba(65, 42, 32, 0.13);
+  /* Neutros claros predominantes, com creme da referência como detalhe. */
+  --bg: #fcf9f5;
+  --bg-soft: #f7f0e9;
+  --paper: #fffdf9;
+  --ink: #392922;
+  --muted: #73645a;
+  --sage: #a78470;
+  --sage-dark: #765547;
+  --sage-deep: #493129;
+  --sage-soft: #f0e2d6;
+  --sand: #e6d2c3;
+  --peach: #d3b4a0;
+  --line: rgba(75, 50, 39, 0.12);
   --white: #fff;
-  --shadow: 0 22px 70px rgba(68, 43, 35, 0.14);
+  --whatsapp: #128c54;
+  --whatsapp-hover: #0c7143;
+  --whatsapp-brand: #25d366;
+  --shadow: 0 22px 70px rgba(68, 43, 35, 0.12);
   --serif: "Playfair Display", Georgia, serif;
   --sans: "DM Sans", Arial, sans-serif;
 }
@@ -86,10 +90,10 @@ button {
 }
 
 .site-header.scrolled {
-  background: rgba(239, 226, 214, 0.9);
-  box-shadow: 0 1px 0 rgba(65, 42, 32, 0.08);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255, 251, 246, 0.94);
+  box-shadow: 0 1px 0 rgba(75, 50, 39, 0.09);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
 .nav {
@@ -206,11 +210,12 @@ button {
 .nav-cta {
   justify-self: end;
   color: var(--white);
-  background: var(--sage-dark);
+  background: var(--whatsapp);
 }
 
 .nav-cta:hover {
-  box-shadow: 0 10px 25px rgba(112, 74, 59, 0.2);
+  background: var(--whatsapp-hover);
+  box-shadow: 0 10px 24px rgba(18, 140, 84, 0.18);
 }
 
 .menu-button {
@@ -257,6 +262,9 @@ button {
   padding: 130px 0 82px;
   isolation: isolate;
   overflow: hidden;
+  background:
+    radial-gradient(ellipse at 80% 35%, rgba(230, 210, 195, 0.42), transparent 48%),
+    linear-gradient(115deg, #fffdf9 0%, #fcf9f5 56%, #f5eae0 100%);
 }
 
 .hero::before {
@@ -269,7 +277,7 @@ button {
   left: -16vw;
   top: -12vw;
   border-radius: 50%;
-  background: rgba(230, 209, 190, 0.45);
+  background: rgba(230, 209, 190, 0.24);
   filter: blur(2px);
   z-index: -2;
 }
@@ -370,13 +378,13 @@ button {
 
 .button-primary {
   color: var(--white);
-  background: var(--sage-dark);
-  box-shadow: 0 12px 32px rgba(112, 74, 59, 0.18);
+  background: var(--whatsapp);
+  box-shadow: 0 10px 26px rgba(18, 140, 84, 0.15);
 }
 
 .button-primary:hover {
-  background: var(--sage-deep);
-  box-shadow: 0 18px 38px rgba(112, 74, 59, 0.24);
+  background: var(--whatsapp-hover);
+  box-shadow: 0 14px 30px rgba(18, 140, 84, 0.2);
 }
 
 .text-link {
@@ -468,8 +476,9 @@ button {
 .photo-frame::before {
   content: "";
   position: absolute;
-  inset: 22px -24px -22px 24px;
-  border: 1px solid rgba(112, 74, 59, 0.22);
+  inset: 20px -20px -20px 20px;
+  border: 1px solid rgba(118, 85, 71, 0.25);
+  background: rgba(230, 210, 195, 0.24);
   border-radius: inherit;
   z-index: 0;
 }
@@ -546,14 +555,14 @@ button {
   height: 7px;
   position: relative;
   border-radius: 50%;
-  background: #a4816a;
+  background: var(--whatsapp);
 }
 
 .pulse-dot::before {
   content: "";
   position: absolute;
   inset: -4px;
-  border: 1px solid #a4816a;
+  border: 1px solid var(--whatsapp);
   border-radius: 50%;
   animation: pulse 1.8s ease-out infinite;
 }
@@ -633,10 +642,10 @@ button {
 }
 
 .intro-strip {
-  padding: 38px 0;
+  padding: 42px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background: rgba(255, 249, 242, 0.42);
+  background: #f3e7dc;
 }
 
 .strip-grid {
@@ -777,21 +786,21 @@ button {
 }
 
 .care-grid {
-  margin-top: 65px;
+  margin-top: 60px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
+  gap: 16px;
 }
 
 .care-card {
-  min-height: 335px;
+  min-height: 320px;
   position: relative;
   padding: 34px;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--paper);
   overflow: hidden;
-  transition: background 0.35s ease;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .care-card::before {
@@ -809,7 +818,9 @@ button {
 }
 
 .care-card:hover {
-  background: var(--paper);
+  background: #fffaf5;
+  border-color: rgba(118, 85, 71, 0.22);
+  box-shadow: 0 14px 34px rgba(73, 49, 41, 0.055);
 }
 
 .care-card:hover::before {
@@ -876,11 +887,12 @@ button {
   flex-direction: column;
   justify-content: flex-end;
   color: var(--white);
-  background: var(--sage-dark);
+  border-color: transparent;
+  background: linear-gradient(140deg, #846456, #4e352e);
 }
 
 .care-card-cta:hover {
-  background: var(--sage-deep);
+  background: linear-gradient(140deg, #78584a, #432c26);
 }
 
 .care-card-cta::before {
@@ -921,7 +933,7 @@ button {
 .process {
   position: relative;
   color: var(--white);
-  background: var(--sage-deep);
+  background: linear-gradient(125deg, #594035 0%, #412c26 68%, #382720 100%);
   overflow: hidden;
 }
 
@@ -975,12 +987,13 @@ button {
 }
 
 .button-light {
-  color: var(--sage-deep);
+  color: var(--whatsapp-hover);
   background: var(--white);
 }
 
 .button-light:hover {
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  background: #f6fff9;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
 }
 
 .steps {
@@ -1030,8 +1043,8 @@ button {
 }
 
 .quote-section {
-  padding: 145px 0;
-  background: var(--paper);
+  padding: 130px 0;
+  background: linear-gradient(155deg, #fffdf9, #f9f2eb);
 }
 
 .quote-wrap {
@@ -1153,9 +1166,12 @@ blockquote {
   align-items: center;
   justify-content: space-between;
   gap: 55px;
-  color: var(--white);
-  background: var(--sage-dark);
+  border: 1px solid rgba(118, 85, 71, 0.12);
+  border-radius: 26px;
+  color: var(--ink);
+  background: linear-gradient(112deg, #ead8c9 0%, #f3e8dc 60%, #fff9f2 100%);
   overflow: hidden;
+  box-shadow: 0 16px 46px rgba(73, 49, 41, 0.06);
 }
 
 .final-card > *:not(.final-orb) {
@@ -1168,7 +1184,22 @@ blockquote {
 }
 
 .final-card h2 {
-  font-size: clamp(38px, 4vw, 56px);
+  font-size: clamp(34px, 3.5vw, 49px);
+  line-height: 1.16;
+}
+
+.final-card .section-kicker.light {
+  color: var(--sage-dark);
+}
+
+.final-card .button-light {
+  color: var(--white);
+  background: var(--whatsapp);
+  box-shadow: 0 10px 26px rgba(18, 140, 84, 0.15);
+}
+
+.final-card .button-light:hover {
+  background: var(--whatsapp-hover);
 }
 
 .final-card .button {
@@ -1181,7 +1212,7 @@ blockquote {
   position: absolute;
   right: -150px;
   top: -240px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(118, 85, 71, 0.14);
   border-radius: 50%;
 }
 
@@ -1189,7 +1220,7 @@ blockquote {
   content: "";
   position: absolute;
   inset: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(118, 85, 71, 0.1);
   border-radius: 50%;
 }
 
@@ -1264,16 +1295,17 @@ blockquote {
   padding: 0 18px;
   border-radius: 999px;
   color: var(--white);
-  background: #704a3b;
-  box-shadow: 0 12px 30px rgba(112, 74, 59, 0.28);
+  background: var(--whatsapp-brand);
+  box-shadow: 0 12px 30px rgba(18, 140, 84, 0.22);
   overflow: hidden;
   transition: gap 0.35s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .whatsapp-float:hover {
   gap: 10px;
-  transform: translateY(-3px);
-  box-shadow: 0 18px 36px rgba(112, 74, 59, 0.34);
+  background: #1ebe5e;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(18, 140, 84, 0.28);
 }
 
 .whatsapp-float svg {
@@ -1342,7 +1374,7 @@ blockquote {
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
-    background: rgba(239, 226, 214, 0.98);
+    background: rgba(255, 251, 246, 0.98);
     border-top: 1px solid var(--line);
     box-shadow: 0 18px 35px rgba(65, 42, 32, 0.08);
     opacity: 0;
@@ -1444,7 +1476,7 @@ blockquote {
   }
 
   .site-header.scrolled {
-    background: rgba(239, 226, 214, 0.96);
+    background: rgba(255, 251, 246, 0.96);
   }
 
   .nav {
@@ -1653,7 +1685,8 @@ blockquote {
   }
 
   .final-card h2 {
-    font-size: 38px;
+    font-size: clamp(30px, 8vw, 36px);
+    line-height: 1.18;
   }
 
   .final-card .button {
