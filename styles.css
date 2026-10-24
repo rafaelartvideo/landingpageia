@@ -1352,6 +1352,91 @@ blockquote {
   transform: translateY(0);
 }
 
+
+/* Refinamento: verde reservado ao botão flutuante do WhatsApp. */
+.nav-cta,
+.button-primary,
+.final-card .button-light {
+  color: var(--white);
+  background: var(--sage-dark);
+  border-color: transparent;
+  box-shadow: 0 10px 26px rgba(73, 49, 41, 0.13);
+}
+
+.nav-cta:hover,
+.button-primary:hover,
+.final-card .button-light:hover {
+  color: var(--white);
+  background: var(--sage-deep);
+  box-shadow: 0 12px 28px rgba(73, 49, 41, 0.18);
+}
+
+/* A seção Como funciona passa a ser leve e predominantemente creme. */
+.process {
+  color: var(--ink);
+  background: linear-gradient(125deg, #f7ede4 0%, #fffaf5 58%, #f5eae1 100%);
+}
+
+.process .section-kicker.light,
+.process .section-index.light {
+  color: var(--sage-dark);
+}
+
+.process .section-index.light {
+  border-color: rgba(118, 85, 71, 0.22);
+}
+
+.process-shape {
+  border-color: rgba(118, 85, 71, 0.12);
+}
+
+.process-shape::before,
+.process-shape::after {
+  border-color: rgba(118, 85, 71, 0.09);
+}
+
+.process-copy p,
+.step p {
+  color: var(--muted);
+}
+
+.process .button-light {
+  color: var(--sage-dark);
+  background: var(--white);
+  border-color: rgba(118, 85, 71, 0.3);
+  box-shadow: none;
+}
+
+.process .button-light:hover {
+  color: var(--sage-deep);
+  background: #fff9f3;
+  border-color: rgba(118, 85, 71, 0.48);
+  box-shadow: 0 12px 28px rgba(73, 49, 41, 0.08);
+}
+
+.steps,
+.step {
+  border-color: var(--line);
+}
+
+.step-marker {
+  color: var(--sage-dark);
+  background: rgba(255, 255, 255, 0.54);
+  border-color: rgba(118, 85, 71, 0.25);
+}
+
+.step small {
+  color: var(--sage);
+}
+
+.pulse-dot {
+  background: var(--sage);
+}
+
+.pulse-dot::before {
+  border-color: var(--sage);
+}
+
 @media (max-width: 980px) {
   .nav {
     grid-template-columns: 1fr auto;
